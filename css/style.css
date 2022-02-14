@@ -543,16 +543,10 @@ input::placeholder {
 
 @media (min-width: 1024px) {
   .car {
-    position: fixed;
+    position: relative;
     width: 100%;
-    bottom: -100%;
-    z-index: 5;
-    height: 100vh;
     -webkit-transition: 0.6s;
     transition: 0.6s;
-  }
-  .car.fixed {
-    bottom: 0;
   }
 }
 
