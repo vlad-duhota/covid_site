@@ -75,4 +75,15 @@ const observer = new IntersectionObserver((entries, observer) => {
     })
 }, options)
 
+const observer2 = new IntersectionObserver((entries, observer) => {
+    // для каждой записи-целевого элемента
+    entries.forEach(entry => {
+        // если элемент является наблюдаемым
+        if (entry.isIntersecting) {
+            $('.healty__img path').addClass('anim');
+        }
+    })
+}, options)
+
 observer.observe(document.querySelector('.location'));
+observer2.observe(document.querySelector('.healthy'));
