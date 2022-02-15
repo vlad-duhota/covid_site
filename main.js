@@ -46,7 +46,7 @@ function anim() {
                 $('.flag_3').removeClass('active');
                 $('.car__item_3').removeClass('active');
             }
-            if (value * .3 > 88) {
+            if (value * .3 > 84) {
                 $('.car').removeClass('fixed');
                 value = 0
             }
@@ -55,3 +55,24 @@ function anim() {
         }
     });
 }
+
+const options = {
+    // родитель целевого элемента - область просмотра
+    root: null,
+    // без отступов
+    rootMargin: '0px',
+    // процент пересечения - половина изображения
+    threshold: .5
+}
+
+const observer = new IntersectionObserver((entries, observer) => {
+    // для каждой записи-целевого элемента
+    entries.forEach(entry => {
+        // если элемент является наблюдаемым
+        if (entry.isIntersecting) {
+            $('.location__img path').addClass('anim');
+        }
+    })
+}, options)
+
+observer.observe(document.querySelector('.location'));

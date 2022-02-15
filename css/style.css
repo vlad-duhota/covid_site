@@ -548,8 +548,8 @@ input::placeholder {
     bottom: -100%;
     z-index: 5;
     height: 100vh;
-    -webkit-transition: 0.6s;
-    transition: 0.6s;
+    -webkit-transition: .3s;
+    transition: .3s;
   }
   .car.fixed {
     bottom: 0;
@@ -626,6 +626,20 @@ input::placeholder {
   top: 48%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
+  background: transparent;
+}
+
+.car-img::before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100vw;
+  height: 1px;
+  right: 100%;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  border-top: 3px dashed #3ab455;
 }
 
 @media (max-width: 992px) {
@@ -859,14 +873,14 @@ input::placeholder {
           flex: 1 1 50%;
 }
 
-.location__img img {
+.location__img svg {
   display: block;
   width: 100%;
   height: 100%;
 }
 
 @media (max-width: 992px) {
-  .location__img img {
+  .location__img svg {
     -webkit-transform: scale(1.4);
             transform: scale(1.4);
   }
@@ -982,4 +996,161 @@ input::placeholder {
   background: linear-gradient(#3ab455);
   border-radius: 20px;
   border: 4px solid #fff;
+}
+
+.location__img .lines {
+  stroke-dasharray: 2000px;
+  stroke-dashoffset: 2000px;
+  -webkit-transition: 5s;
+  transition: 5s;
+}
+
+.location__img .lines.anim {
+  stroke-dashoffset: 0px;
+}
+
+.location__img .bubble {
+  stroke-dasharray: 230px;
+  stroke-dashoffset: 230px;
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+.location__img .bubble.anim {
+  stroke-dashoffset: 0px;
+}
+
+.location__img .bubble:nth-child(2) {
+  -webkit-transition-delay: 1.6s;
+          transition-delay: 1.6s;
+}
+
+.location__img .bubble:nth-child(3) {
+  -webkit-transition-delay: 1.6s;
+          transition-delay: 1.6s;
+}
+
+.location__img .bubble:nth-child(4) {
+  -webkit-transition-delay: 1.9s;
+          transition-delay: 1.9s;
+}
+
+.location__img .bubble:nth-child(5) {
+  -webkit-transition-delay: 1.9s;
+          transition-delay: 1.9s;
+}
+
+.location__img .bubble:nth-child(6) {
+  -webkit-transition-delay: 2.5s;
+          transition-delay: 2.5s;
+}
+
+.location__img .bubble:nth-child(7) {
+  -webkit-transition-delay: 2.5s;
+          transition-delay: 2.5s;
+}
+
+.location__img .bubble:nth-child(8) {
+  -webkit-transition-delay: 2.8s;
+          transition-delay: 2.8s;
+}
+
+.location__img .bubble:nth-child(9) {
+  -webkit-transition-delay: 2.8s;
+          transition-delay: 2.8s;
+}
+
+.location__img .bubble:nth-child(10) {
+  -webkit-transition-delay: 3.1s;
+          transition-delay: 3.1s;
+}
+
+.location__img .bubble:nth-child(11) {
+  -webkit-transition-delay: 3.1s;
+          transition-delay: 3.1s;
+}
+
+.location__img .bubble:nth-child(12) {
+  -webkit-transition-delay: 3.4s;
+          transition-delay: 3.4s;
+}
+
+.location__img .bubble:nth-child(13) {
+  -webkit-transition-delay: 3.4s;
+          transition-delay: 3.4s;
+}
+
+.location__img .bubble:nth-child(14) {
+  -webkit-transition-delay: 3.7s;
+          transition-delay: 3.7s;
+}
+
+.location__img .bubble:nth-child(15) {
+  -webkit-transition-delay: 3.7s;
+          transition-delay: 3.7s;
+}
+
+.location__img .bubble:nth-child(16) {
+  -webkit-transition-delay: 4s;
+          transition-delay: 4s;
+}
+
+.location__img .bubble:nth-child(17) {
+  -webkit-transition-delay: 4s;
+          transition-delay: 4s;
+}
+
+.location__img .bubble:nth-child(18) {
+  -webkit-transition-delay: 4.3s;
+          transition-delay: 4.3s;
+}
+
+.location__img .bubble:nth-child(19) {
+  -webkit-transition-delay: 4.3s;
+          transition-delay: 4.3s;
+}
+
+.location__img .bubble:nth-child(20) {
+  -webkit-transition-delay: 4.6s;
+          transition-delay: 4.6s;
+}
+
+.location__img .bubble:nth-child(21) {
+  -webkit-transition-delay: 4.6s;
+          transition-delay: 4.6s;
+}
+
+.location__img .bubble:nth-child(22) {
+  -webkit-transition-delay: 4.9s;
+          transition-delay: 4.9s;
+}
+
+.location__img .bubble:nth-child(23) {
+  -webkit-transition-delay: 4.9s;
+          transition-delay: 4.9s;
+}
+
+.location__img .bubble:nth-child(24) {
+  -webkit-transition-delay: 5.2s;
+          transition-delay: 5.2s;
+}
+
+.location__img .bubble:nth-child(25) {
+  -webkit-transition-delay: 5.2s;
+          transition-delay: 5.2s;
+}
+
+.location__img .bubble:nth-child(26) {
+  -webkit-transition-delay: 5.5s;
+          transition-delay: 5.5s;
+}
+
+.location__img .bubble:nth-child(27) {
+  -webkit-transition-delay: 5.5s;
+          transition-delay: 5.5s;
+}
+
+.location__img .bubble:nth-child(28) {
+  -webkit-transition-delay: 5.8s;
+          transition-delay: 5.8s;
 }
