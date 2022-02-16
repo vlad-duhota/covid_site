@@ -62,10 +62,10 @@ const options = {
     // без отступов
     rootMargin: '0px',
     // процент пересечения - половина изображения
-    threshold: .5
+    threshold: .75
 }
 
-const observer = new IntersectionObserver((entries, observer) => {
+const location_observer = new IntersectionObserver((entries, observer) => {
     // для каждой записи-целевого элемента
     entries.forEach(entry => {
         // если элемент является наблюдаемым
@@ -75,15 +75,17 @@ const observer = new IntersectionObserver((entries, observer) => {
     })
 }, options)
 
-const observer2 = new IntersectionObserver((entries, observer) => {
+const faq_observer = new IntersectionObserver((entries, observer) => {
     // для каждой записи-целевого элемента
     entries.forEach(entry => {
-        // если элемент является наблюдаемым
+        // если элемент является наблюдае
         if (entry.isIntersecting) {
-            $('.healty__img path').addClass('anim');
+            $('.faq__img path').addClass('anim');
         }
     })
 }, options)
 
-observer.observe(document.querySelector('.location'));
-observer2.observe(document.querySelector('.healthy'));
+
+
+location_observer.observe(document.querySelector('.location'));
+faq_observer.observe(document.querySelector('.faq__img'));
