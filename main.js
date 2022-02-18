@@ -1,5 +1,5 @@
 
-
+// call anim function on window resize
 window.addEventListener("resize", function () {
     if (window.matchMedia("(min-width: 992px)").matches) {
         anim();
@@ -8,7 +8,7 @@ window.addEventListener("resize", function () {
     }
 });
 
-
+// call anim function on document ready function
 $(document).ready(function () {
     if (window.matchMedia("(min-width: 992px)").matches) {
         anim();
@@ -56,6 +56,7 @@ function anim() {
     });
 }
 
+// observer options
 const options = {
     // родитель целевого элемента - область просмотра
     root: null,
@@ -65,6 +66,7 @@ const options = {
     threshold: .75
 }
 
+// observer loaction section
 const location_observer = new IntersectionObserver((entries, observer) => {
     // для каждой записи-целевого элемента
     entries.forEach(entry => {
@@ -75,6 +77,7 @@ const location_observer = new IntersectionObserver((entries, observer) => {
     })
 }, options)
 
+// observer faq section
 const faq_observer = new IntersectionObserver((entries, observer) => {
     // для каждой записи-целевого элемента
     entries.forEach(entry => {
@@ -85,7 +88,36 @@ const faq_observer = new IntersectionObserver((entries, observer) => {
     })
 }, options)
 
-
-
+// call observers
 location_observer.observe(document.querySelector('.location'));
 faq_observer.observe(document.querySelector('.faq__img'));
+
+
+// pop up form
+
+function form(has_next, has_prev , th, open_btn, close_btn, prev_btn, next_btn) {
+    if (has_next) {
+        $(th).change(function () {
+            $(next_btn).addClass('active');
+        });
+    }
+    if(has_prev){
+        $(prev_btn).click(function(e){
+            e.preventDefault();
+            $(th).removeClass('active');
+        });
+    }
+    $(open_btn).click(function (e) {
+        e.preventDefault();
+        $(th).addClass('active');
+    })
+    $(close_btn).click(function (e) {
+        e.preventDefault();
+        $('.pop-up').removeClass('active');
+    })
+}
+
+// call form functions
+form(true , false, '.pop-up_1', '.book', '.close-btn_1' , '', '.pop-up__next_1');
+form(true , true, '.pop-up_2', '.pop-up__next_1', '.close-btn_2', '.pop-up__prev_1', '.pop-up__next_2');
+form(false , true, '.pop-up_3', '.pop-up__next_2', '.close-btn_3', '.pop-up__prev_2', '');
